@@ -1,0 +1,103 @@
+:root {
+  --primary-color: #f8cdda;
+  --secondary-color: #f6a6b2;
+  --text-color: #333;
+  --bg-color: #fffafc;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background: white;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 1em;
+  display: inline-block;
+}
+
+section {
+  padding: 2em 1em;
+  max-width: 900px;
+  margin: auto;
+}
+
+.gallery {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 300px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea, button {
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e68ca1;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: var(--primary-color);
+  color: white;
+  margin-top: 2em;
+}
