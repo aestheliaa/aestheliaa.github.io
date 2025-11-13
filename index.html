@@ -1,58 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delia Anggraeni - Portofolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Delia Anggraeni</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Delia Anggraeni</h1>
-    <p>Mahasiswa</p>
-  </header>
 
-  <nav>
+    <h1 class="focus-in-contract">DELIA ANGGRAENI</h1>
+
+    <nav>
+        <a href="#home" class="link-button">HOME</a>
+        <a href="#pendidikan" class="link-button">PENDIDIKAN</a>
+        <a href="#lokasi" class="link-button">LOKASI KAMPUS</a>
+        <a href="#jadwal" class="link-button">JADWAL KULIAH</a>
+        <a href="#aktivitas" class="link-button">AKTIVITAS</a>
+        <a href="#skills" class="link-button">SKILLS</a>
+    </nav>
+
+
+
+    <h2 id="home">HOME</h2>
+    <img src="photo_2025-10-12_23-07-19 (2).jpg" alt="Foto profil Delia Anggraeni">
+    <p>
+        Halo! Saya Delia Anggraeni.
+    </p>
+    <p>
+        Saya adalah seorang mahasiswa aktif Universitas Amikom Purwokerto jurusan Sistem Informasi. Memiliki minat besar
+        pada pengembangan teknologi informasi, manajemen data, serta bidang yang mendukung efisiensi dan motivasi
+        digital. Terbiasa bekerja dalam tim maupun secara individu, mampu beradaptasi dengan cepat dengan lingkungan
+        baru, serta memiliki semangat belajar yang tinggi.
+    </p>
+
+
+    <h2 id="pendidikan">PENDIDIKAN</h2>
+    <p>Riwayat pendidikan formal yang pernah saya tempuh:</p>
     <ul>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#portofolio">Portofolio</a></li>
-      <li><a href="#kontak">Kontak</a></li>
+        <li><strong>2011 - 2017:</strong> SD NEGERI 1 BANJARANYAR</li>
+        <li><strong>2017 - 2020:</strong> SMP NEGERI 3 SOKARAJA</li>
+        <li><strong>2020 - 2023:</strong> SMK NEGERI 1 KUTASARI</li>
     </ul>
-  </nav>
 
-  <section id="tentang">
-    <h2>Tentang Saya</h2>
-    <p>Saya adalah seorang Mahasiswa di Universitas Amikom Purwokerto. Semester 2 Jurusan Sistem Informasi.</p>
-  </section>
 
-  <section id="portofolio">
-    <h2>Portofolio</h2>
-    <div class="gallery">
-      <div class="card">
-        <img src="http://placehold.co/300x200?text=Project+1" alt="Project 1">
-        <p>Project 1</p>
-      </div>
-      <div class="card">
-        <img src="http://placehold.co/300x200?text=Project+2" alt="Project 2">
-        <p>Project 2</p>
-      </div>
-    </div>
-  </section>
-  
-  <section id="kontak">
-    <h2>Kontak</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Nama Anda" required />
-      <input type="email" placeholder="Email Anda" required />
-      <textarea placeholder="Pesan Anda" required=""></textarea>
-      <button type="submit">Kirim</button>
+    <h2 id="lokasi">LOKASI KAMPUS</h2>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.581080415573!2d109.2314225!3d-7.4007460000000025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655ef25207e1e1%3A0xcedb82ef04ed7e7c!2sUniversitas%20Amikom%20Purwokerto!5e0!3m2!1sid!2sid!4v1759412674713!5m2!1sid!2sid"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+    <h2 id="jadwal">JADWAL KULIAH</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Mata Kuliah</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Senin</td>
+                <td>14.20 - 17.55</td>
+                <td>Pemrograman Web</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td>10.40 - 14.10</td>
+                <td>Interaksi Manusia dan Komputer</td>
+            </tr>
+            <tr>
+                <td>Rabu</td>
+                <td>14.20 - 17.55</td>
+                <td>Pemrograman Berorientasi Objek</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <h2 id="aktivitas">AKTIVITAS</h2>
+    <p>Pengalaman organisasi yang saya ikuti selama kuliah:</p>
+    <ul>
+        <li><strong>Forum Asisten</strong>: Anggota Aktif (2025 - Sekarang)</li>
+    </ul>
+
+
+
+    <h2 id="motto">MOTTO HIDUP</h2>
+    <p><em>"Belajar dengan tulus tanpa kehilangan diri sendiri."</em></p>
+
+
+    <h2 id="skills">SKILLS</h2>
+    <ul>
+        <li><strong>Microsoft Office:</strong> Word, Excel, PowerPoint.</li>
+        <li><strong>Desain Grafis:</strong> Canva, Capcut.</li>
+        <li><strong>Bahasa Pemrograman:</strong> HTML (Dasar).</li>
+    </ul>
+
+
+    <h2 id="lagu-favorit">LAGU FAVORIT</h2>
+    <ul>
+        <li>Afghan - Terima kasih cinta</li>
+    </ul>
+    <video style="display: block;" src="Afgan - Terima Kasih Cinta _ Lirik Lagu.mp4" muted autoplay></video>
+    <audio src="Afgan - Terima Kasih Cinta Lirik Lagu.mp3" autoplay controls></audio>
+
+    <h2 id="diary">DIARY AESTHELIA</h2>
+    <form id="diary-form">
+        <div class="form-group">
+            <label for="diary-date">Tanggal:</label>
+            <input type="date" name="date" id="diary-date" required>
+        </div>
+        <div class="form-group">
+            <label for="diary-title">Judul:</label>
+            <input type="text" name="title" id="diary-title" placeholder="Apa judul ceritamu hari ini?">
+        </div>
+        <div class="form-group">
+            <label for="diary-content">Isi Diary:</label>
+            <textarea name="content" id="diary-content" rows="6" placeholder="Tuliskan ceritamu hari ini!"></textarea>
+        </div>
+        <button type="submit" class="submit-button">Simpan Cerita</button>
     </form>
-  </section>
 
-  <footer>
-    <p>&copy; 2025 Delia Anggraeni</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <div id="diary-output">
+        <div class="diary-card">
+            <p class="card-date">1 Okktober 2025</p>
+            <h3 class="card=title">Personal Statement</h3>
+            <p class="card-content"><i>Aku percaya, ketulusan adalah kekuatan. Seperti dalam lagu 'Terima Kasih Cinta',
+                    aku belajar bahwa mencintai dengan hati yang utuh berarti tetap setia pada diri sendiri.</i></p>
+        </div>
+    </div>
 </body>
+
 </html>

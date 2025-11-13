@@ -1,103 +1,169 @@
-:root {
-  --primary-color: #f8cdda;
-  --secondary-color: #f6a6b2;
-  --text-color: #333;
-  --bg-color: #fffafc;
-}
-
+/* --- Pengaturan Global --- */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif; /* Font yang modern dan mudah dibaca */
+    background-color: #f4f4f9; /* Warna latar belakang abu-abu muda */
+    color: #333; /* Warna teks utama (abu-abu tua) */
+    line-height: 1.6; /* Jarak antar baris agar nyaman dibaca */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Konten diletakkan di tengah halaman */
 }
 
-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  padding: 2em 1em;
-  text-align: center;
+/* --- Wadah Utama --- */
+/* Kita bungkus konten utama agar tidak terlalu lebar di layar besar */
+body > * {
+    max-width: 800px; /* Lebar maksimal konten */
+    width: 100%;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  background: white;
-  border-bottom: 1px solid #eee;
-  margin: 0;
+/* --- Judul dan Heading --- */
+h1 {
+    color: hsl(349, 90%, 77%); /* Warna pink untuk nama */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Jarak antar huruf */
 }
 
-nav li {
-  margin: 0 1em;
+h2 {
+    color: hsl(349, 90%, 77%); /* Warna pink untuk judul bagian */
+    border-bottom: 2px solid hsl(349, 90%, 77%); /* Garis bawah sebagai pemisah */
+    padding-bottom: 5px;
+    margin-top: 40px;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: bold;
-  padding: 1em;
-  display: inline-block;
+/* --- Navigasi --- */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-section {
-  padding: 2em 1em;
-  max-width: 900px;
-  margin: auto;
+.link-button {
+    background-color: hsl(349, 90%, 77%); /* Warna latar tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 15px;
+    text-decoration: none; /* Hapus garis bawah pada link */
+    border-radius: 5px; /* Sudut tombol sedikit melengkung */
+    margin: 0 5px;
+    transition: background-color 0.3s; /* Efek transisi saat kursor di atas tombol */
 }
 
-.gallery {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
+.link-button:hover {
+    background-color: #fff; /* Warna tombol menjadi lebih gelap saat disentuh kursor */
+    color: #000;
 }
 
-.card {
-  flex: 1 1 300px;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
+/* --- Gambar Profil --- */
+img {
+    display: block; /* Agar bisa diatur margin-nya */
+    margin: 20px auto; /* Otomatis berada di tengah */
+    border-radius: 50%; /* Membuat gambar menjadi bulat sempurna */
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+    border: 5px solid hsl(349, 90%, 77%); /* Bingkai pink di sekeliling foto */
 }
 
-.card img {
-  width: 100%;
-  display: block;
+/* --- Tabel Jadwal --- */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Hapus jarak antar sel */
+    margin-top: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  max-width: 400px;
-  margin: auto;
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Garis pemisah antar baris */
 }
 
-input, textarea, button {
-  padding: 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
+thead {
+    background-color: hsl(349, 90%, 77%); /* Latar belakang header tabel (pink) */
+    color: white; /* Teks header tabel */
 }
 
-button {
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
+tbody tr {
+    background-color: #ecf0f1; /* Warna selang-seling untuk baris genap */
 }
 
-button:hover {
-  background-color: #e68ca1;
+/* --- Lain-lain --- */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd; /* Garis pemisah dibuat lebih tipis dan halus */
+    margin: 40px 0;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background: var(--primary-color);
-  color: white;
-  margin-top: 2em;
+ul {
+    list-style-type: square; /* Mengganti bullet point default menjadi kotak */
+    padding-left: 20px;
+}
+
+/* Diary Aesthelia */
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Agar padding tidak merusak layout */
+}
+
+.submit-button {
+    background-color: hsl(349, 90%, 77%); /* Warna pink */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: hsl(0, 0%, 100%); /* Warna putih */
+    color: #000;
+}
+
+
+/* --- Style untuk Card Hasil Diary --- */
+#diary-output {
+    margin-top: 40px;
+}
+
+.diary-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan agar terlihat seperti kartu */
+    border-left: 5px solid hsl(349, 90%, 77%); /* Aksen garis pink di kiri */
+}
+
+.diary-card .card-date {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}
+
+.diary-card .card-title {
+    margin: 5px 0 10px 0;
+    color: #2c3e50;
+}
+
+.diary-card .card-content {
+    margin: 0;
+    line-height: 1.7;
 }
