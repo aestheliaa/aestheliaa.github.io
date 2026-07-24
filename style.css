@@ -1,169 +1,803 @@
-/* --- Pengaturan Global --- */
+/* Delia QA Portfolio — soft pink primary */
+:root {
+	--pink: hsl(349, 90%, 77%);
+	--pink-strong: hsl(349, 85%, 60%);
+	--pink-cta: hsl(349, 82%, 55%);
+	--pink-soft: hsla(349, 90%, 77%, 0.18);
+	--bg: #fafafa;
+	--bg-alt: #fff5f7;
+	--card: #ffffff;
+	--text: #1a1a1a;
+	--muted: #5c5c5c;
+	--border: #f0dbe1;
+	--shadow: 0 8px 28px rgba(40, 10, 20, 0.06);
+	--radius: 16px;
+	--header-h: 68px;
+	--max: 1080px;
+	--font: "DM Sans", system-ui, sans-serif;
+	--display: "Outfit", "DM Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif; /* Font yang modern dan mudah dibaca */
-    background-color: #f4f4f9; /* Warna latar belakang abu-abu muda */
-    color: #333; /* Warna teks utama (abu-abu tua) */
-    line-height: 1.6; /* Jarak antar baris agar nyaman dibaca */
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Konten diletakkan di tengah halaman */
+	margin: 0;
+	font-family: var(--font);
+	font-size: 16px;
+	line-height: 1.65;
+	color: var(--text);
+	background: var(--bg);
 }
 
-/* --- Wadah Utama --- */
-/* Kita bungkus konten utama agar tidak terlalu lebar di layar besar */
-body > * {
-    max-width: 800px; /* Lebar maksimal konten */
-    width: 100%;
-}
-
-/* --- Judul dan Heading --- */
-h1 {
-    color: hsl(349, 90%, 77%); /* Warna pink untuk nama */
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Jarak antar huruf */
-}
-
-h2 {
-    color: hsl(349, 90%, 77%); /* Warna pink untuk judul bagian */
-    border-bottom: 2px solid hsl(349, 90%, 77%); /* Garis bawah sebagai pemisah */
-    padding-bottom: 5px;
-    margin-top: 40px;
-}
-
-/* --- Navigasi --- */
-nav {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.link-button {
-    background-color: hsl(349, 90%, 77%); /* Warna latar tombol */
-    color: white; /* Warna teks tombol */
-    padding: 10px 15px;
-    text-decoration: none; /* Hapus garis bawah pada link */
-    border-radius: 5px; /* Sudut tombol sedikit melengkung */
-    margin: 0 5px;
-    transition: background-color 0.3s; /* Efek transisi saat kursor di atas tombol */
-}
-
-.link-button:hover {
-    background-color: #fff; /* Warna tombol menjadi lebih gelap saat disentuh kursor */
-    color: #000;
-}
-
-/* --- Gambar Profil --- */
 img {
-    display: block; /* Agar bisa diatur margin-nya */
-    margin: 20px auto; /* Otomatis berada di tengah */
-    border-radius: 50%; /* Membuat gambar menjadi bulat sempurna */
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* Memastikan gambar tidak gepeng */
-    border: 5px solid hsl(349, 90%, 77%); /* Bingkai pink di sekeliling foto */
+	max-width: 100%;
+	display: block;
 }
 
-/* --- Tabel Jadwal --- */
-table {
-    width: 100%;
-    border-collapse: collapse; /* Hapus jarak antar sel */
-    margin-top: 20px;
+a {
+	color: inherit;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd; /* Garis pemisah antar baris */
+.skip-link {
+	position: absolute;
+	left: 1rem;
+	top: -100px;
+	background: var(--text);
+	color: #fff;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	z-index: 100;
+	text-decoration: none;
 }
 
-thead {
-    background-color: hsl(349, 90%, 77%); /* Latar belakang header tabel (pink) */
-    color: white; /* Teks header tabel */
+.skip-link:focus {
+	top: 1rem;
 }
 
-tbody tr {
-    background-color: #ecf0f1; /* Warna selang-seling untuk baris genap */
+.container {
+	width: min(100% - 2rem, var(--max));
+	margin-inline: auto;
 }
 
-/* --- Lain-lain --- */
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #ddd; /* Garis pemisah dibuat lebih tipis dan halus */
-    margin: 40px 0;
+.narrow {
+	width: min(100% - 2rem, 760px);
 }
 
-ul {
-    list-style-type: square; /* Mengganti bullet point default menjadi kotak */
-    padding-left: 20px;
+/* Header */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: rgba(250, 250, 250, 0.88);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid var(--border);
 }
 
-/* Diary Aesthelia */
-.form-group{
-    margin-bottom: 15px;
+.header-inner {
+	min-height: var(--header-h);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box; /* Agar padding tidak merusak layout */
+.logo {
+	font-family: var(--display);
+	font-weight: 700;
+	font-size: 1.25rem;
+	text-decoration: none;
+	letter-spacing: 0.02em;
 }
 
-.submit-button {
-    background-color: hsl(349, 90%, 77%); /* Warna pink */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    width: 100%;
-    transition: background-color 0.3s;
+.logo span {
+	color: var(--pink-strong);
 }
 
-.submit-button:hover {
-    background-color: hsl(0, 0%, 100%); /* Warna putih */
-    color: #000;
+.site-nav {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem 1rem;
+	flex-wrap: wrap;
 }
 
-
-/* --- Style untuk Card Hasil Diary --- */
-#diary-output {
-    margin-top: 40px;
+.site-nav a:not(.nav-cta) {
+	text-decoration: none;
+	color: var(--muted);
+	font-weight: 500;
+	font-size: 0.95rem;
+	padding: 0.45rem 0.2rem;
+	transition: color 0.2s ease;
+	cursor: pointer;
+	position: relative;
 }
 
-.diary-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan agar terlihat seperti kartu */
-    border-left: 5px solid hsl(349, 90%, 77%); /* Aksen garis pink di kiri */
+.site-nav a:not(.nav-cta):hover,
+.site-nav a:not(.nav-cta):focus-visible {
+	color: var(--pink-cta);
 }
 
-.diary-card .card-date {
-    font-size: 0.9em;
-    color: #777;
-    margin: 0;
+.site-nav a:not(.nav-cta).is-active {
+	color: var(--pink-cta);
+	font-weight: 700;
 }
 
-.diary-card .card-title {
-    margin: 5px 0 10px 0;
-    color: #2c3e50;
+.site-nav a:not(.nav-cta).is-active::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	background: var(--pink-cta);
+	border-radius: 2px;
 }
 
-.diary-card .card-content {
-    margin: 0;
-    line-height: 1.7;
+.nav-cta {
+	text-decoration: none;
+	background: var(--pink-cta);
+	color: #fff;
+	font-weight: 600;
+	font-size: 0.95rem;
+	padding: 0.5rem 0.95rem;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+	background: var(--pink-strong);
+	color: #fff;
+}
+
+.nav-cta.is-active {
+	box-shadow: 0 0 0 3px var(--pink-soft);
+}
+
+.nav-toggle {
+	display: none;
+	width: 44px;
+	height: 44px;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	background: var(--card);
+	cursor: pointer;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	padding: 0;
+}
+
+.nav-toggle span {
+	display: block;
+	width: 18px;
+	height: 2px;
+	background: var(--text);
+	border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+	padding: 3.5rem 0 3rem;
+	background:
+		radial-gradient(circle at 85% 15%, var(--pink-soft), transparent 40%),
+		radial-gradient(circle at 10% 80%, hsla(349, 90%, 77%, 0.1), transparent 35%),
+		var(--bg);
+}
+
+.hero-grid {
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	gap: 2.5rem;
+	align-items: center;
+}
+
+.eyebrow {
+	display: inline-block;
+	margin: 0 0 0.6rem;
+	color: var(--pink-cta);
+	font-weight: 600;
+	font-size: 0.85rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.hero h1 {
+	font-family: var(--display);
+	font-size: clamp(2.2rem, 5vw, 3.4rem);
+	line-height: 1.1;
+	margin: 0 0 0.4rem;
+	letter-spacing: -0.02em;
+}
+
+.hero-role {
+	margin: 0 0 1rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: var(--pink-cta);
+}
+
+.hero-lead {
+	margin: 0 0 1.5rem;
+	color: var(--muted);
+	max-width: 36rem;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	padding: 0.7rem 1.2rem;
+	border-radius: 999px;
+	text-decoration: none;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+	background: var(--pink-cta);
+	color: #fff;
+	box-shadow: 0 8px 20px hsla(349, 82%, 55%, 0.28);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+	background: var(--pink-strong);
+}
+
+.btn-ghost {
+	background: transparent;
+	border: 1.5px solid var(--border);
+	color: var(--text);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+	border-color: var(--pink-cta);
+	color: var(--pink-cta);
+}
+
+.btn-cv {
+	background: #fff;
+	border: 1.5px solid var(--pink-cta);
+	color: var(--pink-cta);
+}
+
+.btn-cv:hover,
+.btn-cv:focus-visible {
+	background: var(--pink-cta);
+	color: #fff;
+}
+
+.hero-photo {
+	justify-self: center;
+}
+
+.hero-photo img {
+	width: min(280px, 70vw);
+	height: min(280px, 70vw);
+	object-fit: cover;
+	border-radius: 50%;
+	border: 6px solid var(--pink);
+	box-shadow: var(--shadow);
+	background: var(--card);
+}
+
+/* Sections */
+.section {
+	padding: 4rem 0;
+}
+
+.section-alt {
+	background: var(--bg-alt);
+}
+
+.section-head {
+	margin-bottom: 1.75rem;
+}
+
+.section-head h2 {
+	font-family: var(--display);
+	font-size: clamp(1.6rem, 3vw, 2.1rem);
+	margin: 0;
+	letter-spacing: -0.02em;
+}
+
+.section-desc {
+	margin: 0.6rem 0 0;
+	color: var(--muted);
+	max-width: 40rem;
+}
+
+.about-card,
+.skill-card,
+.project-card,
+.timeline-card,
+.edu-card,
+.contact-card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+.about-card {
+	padding: 1.5rem 1.6rem;
+}
+
+.about-card p {
+	margin: 0 0 1rem;
+	color: var(--muted);
+}
+
+.about-card p strong {
+	color: var(--text);
+}
+
+.about-card blockquote {
+	margin: 1.2rem 0 0;
+	padding: 0.9rem 1rem;
+	border-left: 4px solid var(--pink-cta);
+	background: var(--pink-soft);
+	border-radius: 0 12px 12px 0;
+	color: var(--text);
+	font-style: italic;
+}
+
+/* Skill bars */
+.skillbars {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem 1.5rem;
+	margin-bottom: 1.5rem;
+	padding: 1.35rem 1.4rem;
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+.skillbar-label {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.75rem;
+	margin-bottom: 0.4rem;
+	font-size: 0.92rem;
+	font-weight: 600;
+}
+
+.skillbar-pct {
+	color: var(--pink-cta);
+	font-variant-numeric: tabular-nums;
+}
+
+.skillbar-track {
+	height: 10px;
+	background: #f3e4e8;
+	border-radius: 999px;
+	overflow: hidden;
+}
+
+.skillbar-fill {
+	height: 100%;
+	width: 0;
+	border-radius: inherit;
+	background: linear-gradient(90deg, var(--pink), var(--pink-cta));
+	transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Skills cards */
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.skill-card {
+	padding: 1.25rem 1.35rem;
+}
+
+.skill-card h3 {
+	margin: 0 0 0.75rem;
+	font-family: var(--display);
+	font-size: 1.05rem;
+	color: var(--pink-cta);
+}
+
+.skill-card ul {
+	margin: 0;
+	padding-left: 1.1rem;
+	color: var(--muted);
+}
+
+.skill-card li + li {
+	margin-top: 0.35rem;
+}
+
+.chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.55rem;
+	margin-top: 1.25rem;
+}
+
+.chip {
+	display: inline-flex;
+	align-items: center;
+	min-height: 36px;
+	padding: 0.35rem 0.85rem;
+	border-radius: 999px;
+	background: #fff;
+	border: 1px solid var(--border);
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+/* Projects */
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.project-card {
+	padding: 1.35rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+	transform: translateY(-3px);
+	border-color: var(--pink);
+	box-shadow: 0 12px 32px rgba(40, 10, 20, 0.09);
+}
+
+.project-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.project-num {
+	font-family: var(--display);
+	font-weight: 700;
+	font-size: 1.35rem;
+	letter-spacing: 0.04em;
+	color: var(--pink-cta);
+	opacity: 0.85;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	min-height: 28px;
+	padding: 0.2rem 0.65rem;
+	border-radius: 999px;
+	background: var(--pink-soft);
+	color: var(--pink-cta);
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+.project-top h3 {
+	font-family: var(--display);
+	margin: 0.65rem 0 0.2rem;
+	font-size: 1.25rem;
+}
+
+.project-role {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.92rem;
+	font-weight: 500;
+}
+
+.project-meta {
+	margin: 0;
+	display: grid;
+	gap: 0.65rem;
+}
+
+.project-meta dt {
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--pink-cta);
+	font-weight: 700;
+}
+
+.project-meta dd {
+	margin: 0.15rem 0 0;
+	color: var(--muted);
+	font-size: 0.95rem;
+}
+
+.project-note {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.95rem;
+	margin-top: auto;
+}
+
+/* Experience / Education */
+.timeline-card {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1rem;
+	padding: 1.35rem 1.4rem;
+	position: relative;
+}
+
+.timeline-dot {
+	width: 14px;
+	height: 14px;
+	margin-top: 0.4rem;
+	border-radius: 50%;
+	background: var(--pink-cta);
+	box-shadow: 0 0 0 6px var(--pink-soft);
+}
+
+.timeline-period {
+	margin: 0 0 0.25rem;
+	color: var(--pink-cta);
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.timeline-card h3 {
+	margin: 0 0 0.45rem;
+	font-family: var(--display);
+	font-size: 1.1rem;
+}
+
+.timeline-card p {
+	margin: 0;
+	color: var(--muted);
+}
+
+.education-head {
+	margin-top: 2.5rem;
+}
+
+.edu-list {
+	display: grid;
+	gap: 0.85rem;
+}
+
+.edu-card {
+	padding: 1.1rem 1.25rem;
+}
+
+.edu-card h3 {
+	margin: 0 0 0.2rem;
+	font-family: var(--display);
+	font-size: 1.05rem;
+}
+
+.edu-card p {
+	margin: 0;
+	color: var(--muted);
+}
+
+/* Contact */
+.contact-section {
+	background:
+		radial-gradient(circle at 50% 0%, var(--pink-soft), transparent 50%),
+		var(--bg);
+}
+
+.contact-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.contact-card {
+	text-decoration: none;
+	padding: 1.25rem 1.35rem;
+	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+	cursor: pointer;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+	border-color: var(--pink-cta);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px rgba(40, 10, 20, 0.08);
+}
+
+.contact-label {
+	display: block;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--pink-cta);
+	margin-bottom: 0.35rem;
+}
+
+.contact-value {
+	font-weight: 600;
+	word-break: break-word;
+}
+
+.contact-cv {
+	margin-top: 1.25rem;
+	display: flex;
+	justify-content: center;
+}
+
+/* Footer */
+.site-footer {
+	border-top: 1px solid var(--border);
+	padding: 1.25rem 0 1.75rem;
+	color: var(--muted);
+	font-size: 0.92rem;
+	text-align: center;
+}
+
+/* Loading screen */
+.loader {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background:
+		radial-gradient(circle at 30% 20%, var(--pink-soft), transparent 45%),
+		radial-gradient(circle at 70% 80%, hsla(349, 90%, 77%, 0.15), transparent 40%),
+		var(--bg);
+}
+
+.loader-name {
+	font-family: var(--display);
+	font-size: clamp(2.2rem, 6vw, 4rem);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	color: var(--pink-cta);
+}
+
+.loader-letter {
+	display: inline-block;
+	opacity: 0;
+}
+
+.loader-role {
+	margin-top: 0.75rem;
+	font-size: 1rem;
+	color: var(--muted);
+	opacity: 0;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.loader.hidden {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s ease;
+}
+
+/* Focus */
+:focus-visible {
+	outline: 3px solid var(--pink-cta);
+	outline-offset: 2px;
+}
+
+/* Reveal initial state (anime.js) */
+.anim-hero,
+.anim-reveal {
+	opacity: 0;
+}
+
+.no-anim .anim-hero,
+.no-anim .anim-reveal {
+	opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+	.hero-grid,
+	.skills-grid,
+	.project-grid,
+	.skillbars {
+		grid-template-columns: 1fr;
+	}
+
+	.hero {
+		padding-top: 2.5rem;
+	}
+
+	.hero-photo {
+		order: -1;
+	}
+}
+
+@media (max-width: 720px) {
+	.nav-toggle {
+		display: inline-flex;
+	}
+
+	.site-nav {
+		display: none;
+		position: absolute;
+		top: calc(var(--header-h) + 1px);
+		left: 0;
+		right: 0;
+		background: rgba(255, 255, 255, 0.98);
+		border-bottom: 1px solid var(--border);
+		padding: 0.75rem 1rem 1rem;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.25rem;
+	}
+
+	.site-nav.open {
+		display: flex;
+	}
+
+	.site-nav a:not(.nav-cta) {
+		padding: 0.75rem 0.5rem;
+	}
+
+	.site-nav a:not(.nav-cta).is-active::after {
+		display: none;
+	}
+
+	.nav-cta {
+		text-align: center;
+		margin-top: 0.25rem;
+	}
+
+	.contact-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.header-inner {
+		position: relative;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.anim-hero,
+	.anim-reveal {
+		opacity: 1;
+	}
+
+	.project-card,
+	.contact-card,
+	.anim-hero,
+	.anim-reveal,
+	.skillbar-fill {
+		transform: none;
+		transition: none;
+	}
 }
