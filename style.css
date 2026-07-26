@@ -850,6 +850,16 @@ a {
 	text-align: center;
 }
 
+.site-footer a {
+	color: var(--pink-cta);
+	text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+	text-decoration: underline;
+}
+
 /* Loading screen */
 .loader {
 	position: fixed;
