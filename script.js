@@ -80,11 +80,12 @@
 		}
 	}
 
-	// ── Active nav on scroll ──
+	// ── Active nav on scroll + scroll-to-top ──
 	const navLinks = [...document.querySelectorAll("[data-nav]")];
 	const sections = navLinks
 		.map((a) => document.querySelector(a.getAttribute("href")))
 		.filter(Boolean);
+	const scrollTopBtn = document.getElementById("scroll-top");
 
 	function setActiveNav() {
 		const y = window.scrollY + 96;
@@ -96,10 +97,22 @@
 			const on = current && link.getAttribute("href") === `#${current.id}`;
 			link.classList.toggle("is-active", Boolean(on));
 		}
+
+		// Scroll-to-top visibility
+		if (scrollTopBtn) {
+			scrollTopBtn.classList.toggle("visible", y > 400);
+		}
 	}
 
 	setActiveNav();
 	window.addEventListener("scroll", setActiveNav, { passive: true });
+
+	// Scroll-to-top click
+	if (scrollTopBtn) {
+		scrollTopBtn.addEventListener("click", () => {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	}
 
 	// ── Skill bars ──
 	const fills = document.querySelectorAll(".skillbar-fill[data-level]");
